@@ -28,9 +28,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["your-app-name.onrender.com"]  # render setup soon
+ALLOWED_HOSTS = ["django-camera-api.onrender.com"]
 
-CSRF_TRUSTED_ORIGINS = ["https://your-app-name.onrender.com"]  # donain soon
+CSRF_TRUSTED_ORIGINS = ["https://django-camera-api.onrender.com"]
 # Application definition
 
 INSTALLED_APPS = [

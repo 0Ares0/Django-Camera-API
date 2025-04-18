@@ -22,15 +22,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-=ryraya9mqn)!2)c=%5*=u4%s7&ej0fasz3d22sdiaxhctw6_!"
+SECRET_KEY = os.getenv("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["http://*.on-acorn.io", "https://*.on-acorn.io"]
+ALLOWED_HOSTS = ["your-app-name.onrender.com"]  # render setup soon
 
-
+CSRF_TRUSTED_ORIGINS = ["https://your-app-name.onrender.com"]  # donain soon
 # Application definition
 
 INSTALLED_APPS = [

@@ -9,6 +9,6 @@ urlpatterns = [
         views.BlogpostRetrieveUpdateDestroy.as_view(),
         name="update",
     ),
-    # path("Cameras/", views.CameraListCreate.as_view(), name="Camera-view-create")
-    # path("Lenses/", views.LensListCreate.as_view(), name="Lenses-view-create")
+    path("Cameras/", views.CameraListCreate.as_view(), name="Camera-view-create"),
+    path("Lenses/", views.LensListCreate.as_view(), name="Lenses-view-create"),
 ]

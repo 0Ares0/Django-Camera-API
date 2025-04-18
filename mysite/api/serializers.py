@@ -10,11 +10,11 @@ class BlogpostSerializer(serializers.ModelSerializer):
 
 class CameraSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Blogpost
+        model = Camera
         fields = "__all__"
 
 
 class LensSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Blogpost
+        model = Lens
         fields = "__all__"

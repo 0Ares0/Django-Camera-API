@@ -23,11 +23,35 @@ class BlogpostRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = "pk"
 
 
+# camera stuff here
 class CameraListCreate(generics.ListCreateAPIView):
     queryset = Camera.objects.all()
     serializer_class = CameraSerializer
 
+    def delete(self, request, *args, **kwargs):
+        Camera.objects.all().delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class CameraRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Camera.objects.all()
+    serializer_class = CameraSerializer
+    lookup_field = "pk"
+
+
+# lens stuff here
+
 
 class LensListCreate(generics.ListCreateAPIView):
-    queryset = Blogpost.objects.all()
+    queryset = Lens.objects.all()
     serializer_class = LensSerializer
+
+    def delete(self, request, *args, **kwargs):
+        Lens.objects.all().delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class LensRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Lens.objects.all()
+    serializer_class = LensSerializer
+    lookup_field = "pk"
